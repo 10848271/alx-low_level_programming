@@ -1,26 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - prints two digits combination of single-digit numbers
- * Return: Always 0
+ * main - entry point for program
+ * Return: 0 (Success)
  */
+
 int main(void)
 {
 	int i, j;
 
-	for (i = 48; i < 58; i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (j = 48; j < 58; j++)
+		for (j = i + 1; j <= 9; j++)
 		{
-			putchar(i);
-			putchar(j);
-			if (i != 57 || j != 57)
+			putchar(i + 48);
+			putchar(j + 48);
+
+			if (i < 8)
 			{
-				putchar(44);
-				putchar(32);
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
-	putchar(10);
+	putchar('\n');
+
 	return (0);
 }

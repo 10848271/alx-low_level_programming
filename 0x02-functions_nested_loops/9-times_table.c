@@ -15,7 +15,8 @@ void times_table(void)
 			multiple = num * times;
 			if (multiple < 10)
 			{
-				_putchar(' ');
+				if (multiple > 0)
+					_putchar(' ');
 				_putchar(48 + multiple);
 			}
 			else

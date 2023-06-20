@@ -1,5 +1,5 @@
 /**
- * _isLower - checks for lowercase letters
+ * _islower - checks for lowercase letters
  * @c: character to check
  * Return: 1 if lowercase or 0 if not lowercase
  */

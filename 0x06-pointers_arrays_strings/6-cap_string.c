@@ -1,28 +1,36 @@
 /**
  * cap_string - capiltalizes all words of a string
- * @ptr: pointer holding the string
+ * @str: pointer holding the string
  * Return: pointer to the modified string
  */
-char *cap_string(char *ptr)
+char *cap_string(char *str)
 {
-	int i;
+	int i, c;
+	int trigger;
+	char nots[] = ",;.!?(){}\n\t\" ";
 
-	for (i = 0; ptr[i] != '\0'; i++)
+	for (i = 0, trigger = 0; str[i] != '\0'; i++)
 	{
-		if (ptr[i] == ' ' || ptr[i] == '\t' ||
-				ptr[i] == '\n' || ptr[i] == ','
-				|| ptr[i] == ';' ||
-				ptr[i] == '.' || ptr[i] == '!' ||
-				ptr[i] == '?' || ptr[i] == '"' ||
-				ptr[i] == '(' || ptr[i] == ')' ||
-				ptr[i] == '{' || ptr[i] == '}')
+		if (str[0] > 96 && str[0] < 123)
+			trigger = 1;
+		for (c = 0; nots[c] != '\0'; c++)
 		{
-			if (ptr[i + 1] > 96 && ptr[i + 1] < 123)
+			if (nots[c] == str[i])
+				trigger = 1;
+		}
+
+		if (trigger)
+		{
+			if (str[i] > 96 && str[i] < 123)
 			{
-				ptr[i + 1] = ptr[i + 1] - 32;
+				str[i] -= 32;
+				trigger = 0;
 			}
+			else if (str[i] > 64 && str[i] < 91)
+				trigger = 0;
+			else if (str[i] > 47 && str[i] < 58)
+				trigger = 0;
 		}
 	}
-
-	return (ptr);
+	return (str);
 }

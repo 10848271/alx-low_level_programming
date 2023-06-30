@@ -5,18 +5,18 @@
  */
 char *string_toupper(char *ptr)
 {
-	 int i = 0;
+	int i = 0;
 
-	 const int upper = 32;
+	const int upper = 32;
 
-	 while (ptr[i] != '\0')
-	 {
+	while (ptr[i] != '\0')
+	{
 		if (ptr[i] > 96 && ptr[i] < 123)
 		{
 			ptr[i] = (ptr[i] - upper);
 		}
 		i++;
-	 }
+	}
 
-	 return (ptr);
+	return (ptr);
 }

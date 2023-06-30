@@ -20,7 +20,6 @@ char *cap_string(char *ptr)
 			if (ptr[i + 1] > 96 && ptr[i + 1] < 123)
 			{
 				ptr[i + 1] = ptr[i + 1] - 32;
-				i++;
 			}
 		}
 	}

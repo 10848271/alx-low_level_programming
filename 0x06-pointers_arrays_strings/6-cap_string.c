@@ -10,8 +10,8 @@ char *cap_string(char *ptr)
 	for (i = 0; ptr[i] != '\0'; i++)
 	{
 		if (ptr[i] == ' ' || ptr[i] == '\t' ||
-				ptr[i] == '\n' || ptr[i] == '\n' ||
-				ptr[i] == ',' || ptr[i] == ';' ||
+				ptr[i] == '\n' || ptr[i] == ',' 
+				|| ptr[i] == ';' ||
 				ptr[i] == '.' || ptr[i] == '!' ||
 				ptr[i] == '?' || ptr[i] == '"' ||
 				ptr[i] == '(' || ptr[i] == ')' ||

@@ -11,7 +11,7 @@ char *_strdup(char *str)
 {
 	unsigned long int idx, size = strlen(str);
 
-	char *cpy = malloc(sizeof(char) * size);
+	char *cpy = malloc(sizeof(char) * (size + ));
 
 	if (str == NULL || cpy == NULL)
 		return (NULL);

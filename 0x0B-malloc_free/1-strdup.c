@@ -9,12 +9,16 @@
  */
 char *_strdup(char *str)
 {
-	unsigned long int idx, size = strlen(str);
+	unsigned long int idx, size;
 
-	char *cpy = malloc(sizeof(char) * (size + 1));
+	char *cpy;
 
-	if (str == NULL || cpy == NULL)
+	if (str == NULL)
 		return (NULL);
+
+	size = strlen(str);
+
+	cpy = malloc(sizeof(*str) * (size + 1));
 
 	for (idx = 0; idx < size; idx++)
 		cpy[idx] = str[idx];

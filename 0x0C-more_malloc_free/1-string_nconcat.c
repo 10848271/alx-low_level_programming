@@ -15,7 +15,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	unsigned int idx = 0; /* to ensure n char is read */
 
-	int len_s1 = strlen(s1); /* length of s1 */
+	unsigned int len_s1; /* length of s1 */
 
 	/* checks for empty strings */
 	if (!s1)
@@ -23,13 +23,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!s2)
 		s2 = "";
 
+	len_s1 = strlen(s1);
+
 	/* allocate memory for concatenation results */
-	str = (char *)malloc(strlen(s1) * (n + 1));
+	str = (char *)malloc(len_s1 * (n + 1));
 	if (!str)
 		return (NULL);
 
 	/* looping over s1 and store in str */
-	for (; idx < strlen(s1); idx++)
+	for (; idx < len_s1; idx++)
 		str[idx] = s1[idx];
 
 	/* looping over s2 and keeping count */

@@ -11,10 +11,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *new_ptr, *char_ptr;
 	unsigned int idx;
-	
+
 	if (!ptr)
 	{
-		free(ptr);
 		new_ptr = malloc(new_size);
 		return (new_ptr);
 	}
@@ -32,6 +31,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		for (idx = 0; idx < old_size; idx++)
 			new_ptr[idx] = char_ptr[idx];
 		free(ptr);
+		return (new_ptr);
 	}
 
 	return (ptr);

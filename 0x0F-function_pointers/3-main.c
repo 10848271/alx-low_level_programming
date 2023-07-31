@@ -1,34 +1,40 @@
 #include "3-calc.h"
 #include <stdlib.h>
-#include <string.h>
-
+#include <stdio.h>
 /**
- * get_op_func - gets operation to be performed
- * @s: operator passed
+ * main - creates out the whole operation
+ * @argc: number of parameters
+ * @argv: pointer to pointer of parameters
  *
- * Return: pointer to operator
- *
+ * Return: 0
  */
 
-int (*get_op_func(char *s))(int, int)
+int main(int argc, char **argv)
 {
-	int i = 0;
+	int (*func)(int, int), a, b, result;
 
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
+	char *op;
 
-	while (ops[i].op != NULL)
+	if (argc != 4)
 	{
-		if (strcmp(s, ops[i].op) == 0)
-			break;
-		i++;
+		printf("Error\n");
+		exit(98);
 	}
 
-	return (ops[i].f);
+	op = (char *)argv[2];
+	func = get_op_func(op);
+
+	if (!func)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	result = (*func)(a, b);
+	printf("%d\n", result);
+
+	return (0);
 }

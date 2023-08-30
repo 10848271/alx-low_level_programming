@@ -7,17 +7,17 @@
  */
 int _sqrt_helper(int n, int dividend)
 {
-        int root = dividend * dividend;
+	int root = dividend * dividend;
 
-        if (root == n)
-                return (dividend);
-        if (root > n)
-                return (-1);
-        return (_sqrt_helper(n, dividend + 1));
+	if (root == n)
+		return (dividend);
+	if (root > n)
+		return (-1);
+	return (_sqrt_helper(n, dividend + 1));
 }
 
 /**
- * int _sqrt_recursion - find natural root of a number
+ * _sqrt_recursion - find natural root of a number
  * @n: number to find root
  *
  * Return: natural root or -1

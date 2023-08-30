@@ -1,3 +1,5 @@
+#include <string.h>
+
 int _palindrome_checker(char *str, int left, int right);
 
 /**
@@ -8,18 +10,13 @@ int _palindrome_checker(char *str, int left, int right);
  */
 int is_palindrome(char *s)
 {
-	int len = 0;
-	char *str = s;
+	int len = strlen(s);
 
 	if (!s)
 		return (0);
 	if (*s == '\0')
 		return (1);
-	while (*str)
-	{
-		len += 1;
-		str++;
-	}
+	
 	return (_palindrome_checker(s, 0, len - 1));
 
 	return (0);

@@ -15,14 +15,14 @@ int _prime_finder(int n, int dividend)
 }
 
 /**
- * int is_prime_number - finds prime number of an integer
+ * is_prime_number - finds prime number of an integer
  * @n: number to check if its prime
  *
- * Return 1 if n is prime or 0 if not
+ * Return: 1 if n is prime or 0 if not
  */
 int is_prime_number(int n)
 {
-	if(n == 0 || n == 1 || n < 0)
-		return 0;
+	if (n == 0 || n == 1 || n < 0)
+		return (0);
 	return (_prime_finder(n, n - 1));
 }

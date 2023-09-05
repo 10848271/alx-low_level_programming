@@ -12,33 +12,31 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *concat;
-	unsigned int len1, len2, i = 0, j = 0;
+	unsigned int len1, len2, size, i = 0, j = 0;
 
 	if (s1 == NULL)
-		s1 = '\0';
+		s1 = "";
 	if (s2 == NULL)
-		s2 = '\0';
-	len1 = strlen(s1);
-	len2 = strlen(s2);
-	concat = malloc(((len1 + len2) * sizeof(char)) + 1);
-	if (len1 + len2 != 0)
+		s2 = "";
+
+	for (len1 = 0; s1[len1]; len1++)
+		continue;
+	for (len2 = 0; s2[len2]; len2++)
+		continue;
+	size = len1 + len2;
+	concat = malloc((size * sizeof(char)) + 1);
+	if (concat == NULL)
+		return (NULL);
+	while (i < len1)
 	{
-		while (len1 != 0 && i < len1)
-		{
-			concat[i] = s1[i];
-			i++;
-		}
-		while (len2 != 0 && j < len2)
-		{
-			concat[i] = s2[j];
-			i++;
-			j++;
-		}
-		concat[i] = '\0';
+		concat[i] = s1[i];
+		i++;
 	}
-	else
+	while (j < len2)
 	{
-		concat[j] = '\0';
+		concat[i] = s2[j];
+		i++;
+		j++;
 	}
 
 	return (concat);

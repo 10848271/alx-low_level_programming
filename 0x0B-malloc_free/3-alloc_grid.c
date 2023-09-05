@@ -10,11 +10,12 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **outer, i = 0, j = 0;
+	int **outer;
+	int i, j;
 
-	if (width <= 0 || height <= 0)
+	if (height <= 0)
 		return (NULL);
-	outer = (int **)malloc(height * sizeof(int));
+	outer = (int **)malloc(height * sizeof(outer));
 	if (outer == NULL)
 	{
 		free(outer);

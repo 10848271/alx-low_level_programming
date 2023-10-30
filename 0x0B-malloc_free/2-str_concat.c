@@ -14,11 +14,9 @@ char *str_concat(char *s1, char *s2)
 	char *c_str;
 
 	if (s1 == NULL)
-		return (s2);
+		s2 = "";
 	if (s2 == NULL)
-		return (s1);
-	if (s1 == NULL && s2 == NULL)
-		return ('\0');
+		s1 = "";
 	for (l1 = 0; s1[l1]; l1++)
 		continue;
 	for (l2 = 0; s2[l2]; l2++)

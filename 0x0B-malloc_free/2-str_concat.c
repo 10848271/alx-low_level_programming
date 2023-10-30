@@ -13,12 +13,12 @@ char *str_concat(char *s1, char *s2)
 	int l1, l2, len, idx;
 	char *c_str;
 
-	if (!s1)
+	if (s1 == NULL)
 		return (s2);
-	if (!s2)
+	if (s2 == NULL)
 		return (s1);
-	if (!s1 && !s2)
-		return ("");
+	if (s1 == NULL && s2 == NULL)
+		return ('\0');
 	for (l1 = 0; s1[l1]; l1++)
 		continue;
 	for (l2 = 0; s2[l2]; l2++)

@@ -13,11 +13,11 @@ char *str_concat(char *s1, char *s2)
 	int l1, l2, len, idx;
 	char *c_str;
 
-	if (!l1)
-		return (l2);
-	if (!l2)
-		return (l1);
-	if (!l1 && !l2)
+	if (!s1)
+		return (s2);
+	if (!s2)
+		return (s1);
+	if (!s1 && !s2)
 		return ("");
 	for (l1 = 0; s1[l1]; l1++)
 		continue;

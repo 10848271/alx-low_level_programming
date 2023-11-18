@@ -1,10 +1,11 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * print_list - prints a linked list
- * h: head node of linked list
+ * @h: head node of linked list
  *
  * Return: number of nodes in linked lists
  */
@@ -26,5 +27,5 @@ size_t print_list(const list_t *h)
 		trav = trav->next;
 	}
 
-	return (len);
+	return (len);#include "lists.h"
 }

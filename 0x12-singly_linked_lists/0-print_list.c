@@ -26,5 +26,5 @@ size_t print_list(const list_t *h)
 		trav = trav->next;
 	}
 
-	return (len);#include "lists.h"
+	return (len);
 }
